@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - Comunidad Piura</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      background: linear-gradient(135deg, #000000, #1c1c1c);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .login-container {
+      background: rgba(20, 20, 20, 0.95);
+      padding: 40px;
+      border-radius: 12px;
+      width: 380px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .login-container h1 {
+      color: #fff;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .logo {
+      width: 140px;
+      margin-bottom: 25px;
+    }
+
+    input {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: 1px solid #444;
+      border-radius: 8px;
+      background: #222;
+      color: #fff;
+      font-size: 14px;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    input:focus {
+      border: 1px solid #e50914;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 14px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-login {
+      background: #fff;
+      color: #000;
+    }
+
+    .btn-login:hover {
+      background: #ddd;
+    }
+
+    .btn-register {
+      background: #e50914;
+      color: #fff;
+    }
+
+    .btn-register:hover {
+      background: #b00610;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Bienvenido a la </h1>
+    <img src="Diseño sin título (4).png" alt="Logo Comunidad Piura" class="logo">
+    
+    <form onsubmit="return validarLogin()">
+      <input type="text" id="usuario" placeholder="Usuario o Email" required>
+      <input type="password" id="password" placeholder="Contraseña" required>
+      <button type="submit" class="btn btn-login">Ingresar</button>
+    </form>
+
+    <button class="btn btn-register" onclick="registrar()">Registrar</button>
+  </div>
+
+  <script>
+    function validarLogin() {
+      let usuario = document.getElementById("usuario").value.trim();
+      let password = document.getElementById("password").value.trim();
+
+      if (usuario === "" || password === "") {
+        alert("Por favor, completa todos los campos.");
+        return false;
+      }
+
+      // 🚀 Conectado a principal.html
+      window.location.href = "principal.html";
+      return false;
+    }
+
+    function registrar() {
+      // 🚀 Conectado a registro.html
+      window.location.href = "registro.html";
+    }
+  </script>
+</body>
+</html>
